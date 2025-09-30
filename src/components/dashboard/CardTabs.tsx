@@ -18,19 +18,33 @@ export default function CardTabs() {
                 <div className="flex gap-6">
                     <TabsTrigger
                         value="overview"
-                        className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-0"
+                        className="
+              rounded-none border-b-2 border-transparent px-0 shadow-none
+              data-[state=active]:border-primary
+              focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0
+            "
                     >
                         Card Overview
                     </TabsTrigger>
+
                     <TabsTrigger
                         value="detail"
-                        className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-0"
+                        className="
+              rounded-none border-b-2 border-transparent px-0 shadow-none
+              data-[state=active]:border-primary
+              focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0
+            "
                     >
                         Card Detail
                     </TabsTrigger>
+
                     <TabsTrigger
                         value="management"
-                        className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-0"
+                        className="
+              rounded-none border-b-2 border-transparent px-0 shadow-none
+              data-[state=active]:border-primary
+              focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0
+            "
                     >
                         Card Management
                     </TabsTrigger>
@@ -38,7 +52,7 @@ export default function CardTabs() {
             </TabsList>
 
             <TabsContent value="overview">
-                <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <Kpi icon={CreditCard} label="Active Cards" value={activeCards} />
                     <Kpi icon={DollarSign} label="Monthly Spend" value={`$${monthlySpend.toLocaleString()}`} />
                     <Kpi icon={AlertTriangle} label="AI Alerts" value={aiAlerts} />
@@ -50,10 +64,11 @@ export default function CardTabs() {
             </TabsContent>
 
             <TabsContent value="detail">
-                <div className="p-6 border rounded-md bg-card">Card Detail Placeholder</div>
+                <div className="rounded-md border bg-card p-6">Card Detail Placeholder</div>
             </TabsContent>
+
             <TabsContent value="management">
-                <div className="p-6 border rounded-md bg-card">Card Management Placeholder</div>
+                <div className="rounded-md border bg-card p-6">Card Management Placeholder</div>
             </TabsContent>
         </Tabs>
     );

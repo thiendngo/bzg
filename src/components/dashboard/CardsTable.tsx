@@ -48,32 +48,36 @@ export default function CardsTable() {
             </table>
             <div className="flex items-center justify-between border-t bg-muted/30 px-4 py-3 text-sm text-muted-foreground">
                 <div>
-                    Showing <span className="font-medium">{start + 1}</span>–
-                    <span className="font-medium">
-      {Math.min(start + pageSize, cards.length)}
-    </span>{" "}
-                    of <span className="font-medium">{cards.length}</span>
+                    Page {page} of {totalPages}
                 </div>
                 <div className="flex items-center gap-2">
                     <button
                         disabled={page === 1}
                         onClick={() => setPage(page - 1)}
-                        className="rounded-md border px-3 py-1.5 disabled:opacity-50"
+                        className="
+                            rounded-md border px-3 py-1.5
+                            transition-colors
+                            hover:bg-muted/50 hover:text-foreground
+                            disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-muted-foreground
+                          "
                     >
                         Previous
                     </button>
-                    <span>
-      Page {page} of {totalPages}
-    </span>
                     <button
                         disabled={page === totalPages}
                         onClick={() => setPage(page + 1)}
-                        className="rounded-md border px-3 py-1.5 disabled:opacity-50"
+                        className="
+                            rounded-md border px-3 py-1.5
+                            transition-colors
+                            hover:bg-muted/50 hover:text-foreground
+                            disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-muted-foreground
+                          "
                     >
                         Next
                     </button>
                 </div>
             </div>
+
 
         </Card>
     );
