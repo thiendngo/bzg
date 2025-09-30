@@ -1,23 +1,29 @@
 // components/dashboard/Topbar.tsx
 "use client";
 
-import { Bell, ChevronDown, Menu, Search, LogOut } from "lucide-react";
+import { Bell, ChevronDown, Menu, Search, LogOut, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-    DropdownMenu, DropdownMenuContent, DropdownMenuItem,
-    DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SidebarContent } from "./SideBar";
+
+//  Import profile image
+import profileImage from "@/data/images/imageProfile.png";
 
 export default function Topbar() {
     return (
         <header className="sticky top-0 z-30 border-b bg-[--topbar] text-[--topbar-foreground]">
-            {/* On 4K, let the bar span full width; keep consistent horizontal padding */}
             <div className="relative mx-auto flex h-16 w-full items-center px-6">
-                {/* Hamburger is absolute so it doesn't push the search on small screens */}
+                {/* Mobile hamburger */}
                 <Sheet>
                     <SheetTrigger asChild>
                         <Button
@@ -34,7 +40,7 @@ export default function Topbar() {
                     </SheetContent>
                 </Sheet>
 
-                {/* LEFT: search – flush-left with container padding */}
+                {/* LEFT: search */}
                 <div className="flex flex-1">
                     <div className="relative w-[260px] md:w-[320px]">
                         <Search className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -45,8 +51,8 @@ export default function Topbar() {
                     </div>
                 </div>
 
-                {/* RIGHT: actions – naturally flush-right */}
-                <div className="ml-2 flex items-center gap-1">
+                {/* RIGHT: actions */}
+                <div className="ml-2 flex items-center gap-2">
                     <Button variant="secondary" className="hidden sm:inline-flex">
                         Move Money <ChevronDown className="ml-2 h-4 w-4" />
                     </Button>
@@ -57,8 +63,12 @@ export default function Topbar() {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="ghost" className="gap-2">
-                                <Avatar className="h-6 w-6">
-                                    <AvatarFallback>J</AvatarFallback>
+                                {/* Avatar with fallback */}
+                                <Avatar className="h-10 w-10">
+                                    <AvatarImage src={profileImage.src} alt="Profile picture" />
+                                    <AvatarFallback>
+                                        <User className="h-5 w-5" />
+                                    </AvatarFallback>
                                 </Avatar>
                                 Jane
                                 <ChevronDown className="h-4 w-4" />
