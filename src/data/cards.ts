@@ -51,7 +51,7 @@ export function generateRows(count = 140): CardRow[] {
 export const cards = Array.from({ length: 140 }).map((_, i) => ({
     id: i + 1,
     holder: ["Marketing Dept", "Summer Ads", "Campaign Card", "Tools Subscription", "Finance", "Sales", "Engineering", "John Doe (CFO)"][i % 8] + ` #${i + 1}`,
-    type: i % 2 === 0 ? "Virtual" : "Physical",
+    type: i % 2 === 0 ? "Employee Cards" : "Purchasing Cards",
     limit: 5000 + (i % 5) * 1000,
     spend: 1000 + (i * 123) % 5000,
     percent: 77,

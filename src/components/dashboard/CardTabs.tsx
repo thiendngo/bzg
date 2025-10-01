@@ -53,15 +53,39 @@ export default function CardTabs() {
 
             <TabsContent value="overview">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <Kpi icon={CreditCard} label="Active Cards" value={activeCards} />
-                    <Kpi icon={DollarSign} label="Monthly Spend" value={`$${monthlySpend.toLocaleString()}`} />
-                    <Kpi icon={AlertTriangle} label="AI Alerts" value={aiAlerts} />
-                    <Kpi icon={Ban} label="Unused Cards" value={unusedCards} />
+                    <Kpi icon={CreditCard} label="Active Cards" value={42} trend="positive"/>
+
+                    <Kpi
+                        icon={DollarSign}
+                        label="Monthly Spend"
+                        value="$183,000"
+                        trend="positive"
+                        trendValue="36.8%"
+                        subtext="vs last month"
+                    />
+
+                    <Kpi
+                        icon={AlertTriangle}
+                        label="AI Alerts"
+                        value={4}
+                        subtext="Unusual transactions"
+                        trend="positive"
+                    />
+
+                    <Kpi
+                        icon={Ban}
+                        label="Unused Cards"
+                        value={4}
+                        subtext="Inactive > 60 days"
+                        trend="positive"
+                    />
                 </div>
+
                 <div className="mt-6">
                     <CardsTable />
                 </div>
             </TabsContent>
+
 
             <TabsContent value="detail">
                 <div className="rounded-md border bg-card p-6">Card Detail Placeholder</div>

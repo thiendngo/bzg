@@ -17,7 +17,6 @@ export function SidebarContent() {
         <div className="flex h-full min-h-0 flex-col">
             {/* Header */}
             <div className="flex h-16 items-center gap-2 border-b px-6">
-                <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">BZ</div>
                 <div className="text-sm font-semibold tracking-tight">BZG LOGO</div>
             </div>
 
@@ -51,7 +50,7 @@ export function SidebarContent() {
                     ]}
                 />
 
-                <SidebarItem icon={ShieldCheck} href="/my-account">My account</SidebarItem>
+                <SidebarItem icon={ShieldCheck} href="/card-limit">Cards and limits</SidebarItem>
                 <SidebarItem icon={CreditCard} href="/account">Account</SidebarItem>
                 <SidebarItem icon={Wallet} href="/card">Card</SidebarItem>
 
